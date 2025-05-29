@@ -19,8 +19,9 @@ A script designed for **Grand Theft Auto V (GTA 5)** that periodically triggers 
 3. **Reload Config**: Press `F10` to reload the configuration file (useful after modifying settings).  
 
 
-### Installation Steps  
+### Installation Steps (Revised Dependencies)  
 1. **Install Dependencies**:  
+   - [.NET 8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (execution environment required for ScriptHookVDotNet).  
    - [ScriptHookV](https://www.dev-c.com/gtav/scripthookv/) (required for GTA 5 script execution).  
    - [ScriptHookVDotNet](https://github.com/crosire/scripthookvdotnet) (enables .NET-based scripts).  
 2. **Deploy the Script**:  
@@ -66,10 +67,11 @@ If you prefer to compile the script yourself:
 3. **重载配置**：按下 `F10` 键可重新加载配置文件（修改设置后使用）。  
 
 
-### 安装步骤  
+### 安装步骤（修正后依赖项）  
 1. **安装依赖**：  
-   - [ScriptHookV](https://www.dev-c.com/gtav/scripthookv/)（GTA 5脚本运行必需）。  
-   - [ScriptHookVDotNet](https://github.com/crosire/scripthookvdotnet)（支持.NET脚本）。  
+   - [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)（ScriptHookVDotNet 依赖的执行环境）。  
+   - [ScriptHookV](https://www.dev-c.com/gtav/scripthookv/)（GTA 5 脚本运行必需）。  
+   - [ScriptHookVDotNet](https://github.com/crosire/scripthookvdotnet)（支持 .NET 脚本）。  
 2. **部署脚本**：  
    - 将编译好的 `DangerousNpcAttack.dll` 和 `DangerousNpcAttack.ini` 文件放入GTA 5根目录的 `scripts` 文件夹（如 `...\Grand Theft Auto V\scripts\`）。  
 
