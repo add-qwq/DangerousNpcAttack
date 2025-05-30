@@ -1,6 +1,9 @@
 
 # DangerousNpcAttack  
 
+[已上传至gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)
+
+[Already uploaded to gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)
 
 ## English:  
 ### What's this?  
