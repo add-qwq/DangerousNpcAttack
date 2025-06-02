@@ -91,20 +91,25 @@ namespace RandomNPCAttack
             Ped player = Game.Player.Character;
             if (player == null || !player.IsAlive) return;
 
-            Ped[] nearbyPeds = World.GetNearbyPeds(player, 50.0f);
+            Ped[] nearbyPeds = World.GetNearbyPeds(player, 30.0f);
             Ped closestPed = null;
-            float minDistance = float.MaxValue;
+            float minSquaredDistance = float.MaxValue;
+            Vector3 playerPos = player.Position;
 
             foreach (Ped ped in nearbyPeds)
             {
-                if (ped != null && ped.IsAlive && !ped.IsPlayer && ped.IsHuman && !ped.IsInVehicle())
+                if (ped == null || !ped.IsAlive || ped.IsPlayer || !ped.IsHuman || ped.IsInVehicle())
+                    continue;
+
+                Vector3 pedPos = ped.Position;
+                float squaredDistance = (pedPos.X - playerPos.X) * (pedPos.X - playerPos.X) +
+                                       (pedPos.Y - playerPos.Y) * (pedPos.Y - playerPos.Y) +
+                                       (pedPos.Z - playerPos.Z) * (pedPos.Z - playerPos.Z);
+
+                if (squaredDistance < minSquaredDistance)
                 {
-                    float distance = Vector3.Distance(player.Position, ped.Position);
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                        closestPed = ped;
-                    }
+                    minSquaredDistance = squaredDistance;
+                    closestPed = ped;
                 }
             }
 
@@ -121,6 +126,6 @@ namespace RandomNPCAttack
             Function.Call(Hash.SET_PED_AS_ENEMY, closestPed, true);
             closestPed.Task.FightAgainst(player);
             UI.Notify("Closest NPC armed with an RPG and is hostile!；最近的NPC手持RPG，充满敌意！");
-        }
-    }
-}
+        } 
+    } 
+} 
