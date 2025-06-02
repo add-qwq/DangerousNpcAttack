@@ -1,9 +1,9 @@
-
+# English:
 # DangerousNpcAttack  
 
-[已上传至gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)
+[已上传至gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)  
+[Already uploaded to gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)  
 
-[Already uploaded to gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)
 
 ## English:  
 ### What's this?  
@@ -11,9 +11,10 @@ A script designed for **Grand Theft Auto V (GTA 5)** that periodically triggers 
 
 
 ### Functionality  
-- **Automatic Trigger**: By default, randomly selects a nearby NPC to attack the player every 5 minutes (configurable).  
+- **Automatic Trigger**: By default, randomly selects a nearby NPC to attack the player every 5 minutes (configurable via INI).  
 - **Force Trigger**: Use a customizable key (default: NumPad3) to manually trigger an NPC attack at any time.  
-- **Smart NPC Selection**: Chooses the closest valid NPC (alive, not in a vehicle, and not the player) within 50 meters to arm with an RPG and set as hostile.  
+- **Smart NPC Selection**:  
+  - Chooses the **closest valid NPC** (alive, not in a vehicle, not the player, and human) within a configurable range (optimized in v1: uses squared distance calculation to reduce computation).  
 
 
 ### How to Use  
@@ -22,10 +23,10 @@ A script designed for **Grand Theft Auto V (GTA 5)** that periodically triggers 
 3. **Reload Config**: Press `F10` to reload the configuration file (useful after modifying settings).  
 
 
-### Installation Steps (Revised Dependencies)  
+### Installation Steps
 1. **Install Dependencies**:  
-   - [.NET 8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (execution environment required for ScriptHookVDotNet).  
-   - [ScriptHookV](https://www.dev-c.com/gtav/scripthookv/) (required for GTA 5 script execution).  
+   - [.NET 8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (required execution environment for ScriptHookVDotNet).  
+   - [ScriptHookV](https://www.dev-c.com/gtav/scripthookv/) (essential for GTA 5 script execution).  
    - [ScriptHookVDotNet](https://github.com/crosire/scripthookvdotnet) (enables .NET-based scripts).  
 2. **Deploy the Script**:  
    - Place the compiled `DangerousNpcAttack.dll` and `DangerousNpcAttack.ini` files into the `scripts` folder of your GTA 5 root directory (e.g., `...\Grand Theft Auto V\scripts\`).  
@@ -50,7 +51,8 @@ If you prefer to compile the script yourself:
 ### Important Notes  
 - **Compatibility**: Works on PC version of GTA 5. Tested with Steam/Epic Games versions.  
 - **Safety**: If you distrust pre-compiled DLLs, review the source code and use the provided compilation command to build your own.  
-- **NPC Requirements**: The script will notify you if no valid NPCs are found nearby (e.g., all NPCs are in vehicles or dead).  
+- **NPC Requirements**: The script will notify you if no valid NPCs are found nearby (e.g., all NPCs are in vehicles, dead, or non-human).  
+- **Performance Optimization**: The script uses squared distance calculation (instead of direct distance) to efficiently find the closest NPC, reducing computational overhead.  
 
 
 ## 中文：  
@@ -59,9 +61,10 @@ If you prefer to compile the script yourself:
 
 
 ### 功能  
-- **自动触发**：默认每5分钟（可配置）随机选择附近一个NPC攻击玩家。  
+- **自动触发**：默认每5分钟（可通过INI配置）随机选择附近一个NPC攻击玩家。  
 - **强制触发**：通过自定义按键（默认：小键盘3）手动立即触发NPC攻击。  
-- **智能NPC选择**：在50米范围内选择最近的有效NPC（存活、不在载具中、非玩家），为其装备RPG并设置敌对状态。  
+- **智能NPC选择**：  
+  - 在配置范围内选择最近的有效NPC（存活、不在载具中、非玩家、人类），并为其装备RPG（v1优化：采用平方距离计算减少运算量）。  
 
 
 ### 使用方法  
@@ -70,7 +73,7 @@ If you prefer to compile the script yourself:
 3. **重载配置**：按下 `F10` 键可重新加载配置文件（修改设置后使用）。  
 
 
-### 安装步骤（修正后依赖项）  
+### 安装步骤 
 1. **安装依赖**：  
    - [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)（ScriptHookVDotNet 依赖的执行环境）。  
    - [ScriptHookV](https://www.dev-c.com/gtav/scripthookv/)（GTA 5 脚本运行必需）。  
@@ -98,4 +101,5 @@ If you prefer to compile the script yourself:
 ### 注意事项  
 - **兼容性**：仅支持GTA 5 PC版，已在Steam/Epic平台版本测试。  
 - **安全性**：若不信任预编译DLL，可审查源代码后使用提供的编译命令自行构建。  
-- **NPC限制**：若附近无有效NPC（如所有NPC在载具中或已死亡），脚本会提示“未找到附近有效NPC”。
+- **NPC限制**：若附近无有效NPC（如所有NPC在载具中、已死亡或非人类），脚本会提示“未找到附近有效NPC”。  
+- **性能优化**：脚本通过平方距离计算（而非直接距离）高效定位最近NPC，降低计算开销。
