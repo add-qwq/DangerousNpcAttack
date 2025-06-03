@@ -1,3 +1,5 @@
+[已上传至gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)  
+[Already uploaded to gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)  
 
 ## English:  
 ### What's this?  
@@ -8,7 +10,8 @@ A script designed for **Grand Theft Auto V (GTA 5)** that periodically triggers 
 - **Automatic Trigger**: By default, randomly selects a nearby NPC to attack the player every 5 minutes (configurable via INI).  
 - **Force Trigger**: Use a customizable key (default: NumPad3) to manually trigger an NPC attack at any time.  
 - **Smart NPC Selection**:  
-  - Chooses the **closest valid NPC** (alive, not in a vehicle, not the player, and human) within a configurable range (optimized in v1: uses squared distance calculation to reduce computation).  
+  - Chooses the **closest valid NPC** (alive, not in a vehicle, not the player, human, and **not a police NPC**) within a configurable range.  
+  - Optimized with squared distance calculation to reduce computation overhead.  
 
 
 ### How to Use  
@@ -45,8 +48,8 @@ If you prefer to compile the script yourself:
 ### Important Notes  
 - **Compatibility**: Works on PC version of GTA 5. Tested with Steam/Epic Games versions.  
 - **Safety**: If you distrust pre-compiled DLLs, review the source code and use the provided compilation command to build your own.  
-- **NPC Requirements**: The script will notify you if no valid NPCs are found nearby (e.g., all NPCs are in vehicles, dead, or non-human).  
-- **Performance Optimization**: The script uses squared distance calculation (instead of direct distance) to efficiently find the closest NPC, reducing computational overhead.  
+- **NPC Requirements**: The script will notify you if no valid NPCs are found nearby (e.g., all NPCs are in vehicles, dead, non-human, or police NPCs).  
+- **Performance Optimization**: Uses squared distance calculation (instead of direct distance) to efficiently find the closest NPC, reducing computational overhead.  
 
 
 ## 中文：  
@@ -58,7 +61,8 @@ If you prefer to compile the script yourself:
 - **自动触发**：默认每5分钟（可通过INI配置）随机选择附近一个NPC攻击玩家。  
 - **强制触发**：通过自定义按键（默认：小键盘3）手动立即触发NPC攻击。  
 - **智能NPC选择**：  
-  - 在配置范围内选择最近的有效NPC（存活、不在载具中、非玩家、人类），并为其装备RPG（v1优化：采用平方距离计算减少运算量）。  
+  - 在配置范围内选择最近的有效NPC（存活、不在载具中、非玩家、人类，且**非警察NPC**）。  
+  - 采用平方距离计算优化，降低运算开销。  
 
 
 ### 使用方法  
@@ -95,5 +99,5 @@ DangerousNpcAttack.ini 文件（缺失时自动生成）支持以下设置：
 ### 注意事项  
 - **兼容性**：仅支持GTA 5 PC版，已在Steam/Epic平台版本测试。  
 - **安全性**：若不信任预编译DLL，可审查源代码后使用提供的编译命令自行构建。  
-- **NPC限制**：若附近无有效NPC（如所有NPC在载具中、已死亡或非人类），脚本会提示“未找到附近有效NPC”。  
-- **性能优化**：脚本通过平方距离计算（而非直接距离）高效定位最近NPC，降低计算开销。
+- **NPC限制**：若附近无有效NPC（如所有NPC在载具中、已死亡、非人类或为警察NPC），脚本会提示“未找到附近有效NPC”。  
+- **性能优化**：通过平方距离计算（而非直接距离）高效定位最近NPC，降低计算开销。
