@@ -1,9 +1,3 @@
-# English:
-# DangerousNpcAttack  
-
-[已上传至gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)  
-[Already uploaded to gta5-mods.com](https://www.gta5-mods.com/scripts/dangerous-npc-attack-bazooka-npc)  
-
 
 ## English:  
 ### What's this?  
@@ -18,34 +12,34 @@ A script designed for **Grand Theft Auto V (GTA 5)** that periodically triggers 
 
 
 ### How to Use  
-1. **Automatic Activation**: The script will automatically attempt to trigger an attack every `IntervalMinutes` (configured in the INI file).  
-2. **Force Activation**: Press the `ForceTriggerKey` (configured in the INI file) to manually trigger an attack immediately.  
-3. **Reload Config**: Press `F10` to reload the configuration file (useful after modifying settings).  
+1. **Automatic Activation**: The script will automatically attempt to trigger an attack every IntervalMinutes (configured in the INI file).  
+2. **Force Activation**: Press the ForceTriggerKey (configured in the INI file) to manually trigger an attack immediately.  
+3. **Reload Config**: Press F10 to reload the configuration file (useful after modifying settings).  
 
 
-### Installation Steps
+### Installation Steps  
 1. **Install Dependencies**:  
    - [.NET 8 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (required execution environment for ScriptHookVDotNet).  
    - [ScriptHookV](https://www.dev-c.com/gtav/scripthookv/) (essential for GTA 5 script execution).  
    - [ScriptHookVDotNet](https://github.com/crosire/scripthookvdotnet) (enables .NET-based scripts).  
 2. **Deploy the Script**:  
-   - Place the compiled `DangerousNpcAttack.dll` and `DangerousNpcAttack.ini` files into the `scripts` folder of your GTA 5 root directory (e.g., `...\Grand Theft Auto V\scripts\`).  
+   - Place the compiled DangerousNpcAttack.dll and DangerousNpcAttack.ini files into the scripts folder of your GTA 5 root directory (e.g., ...\Grand Theft Auto V\scripts\).  
 
 
 ### Configuration  
-The `DangerousNpcAttack.ini` file (auto-generated if missing) supports the following settings:  
-- `IntervalMinutes`: Time interval (in minutes) for automatic attacks (e.g., `5.0` for 5 minutes).  
-- `ForceTriggerKey`: Key to manually trigger attacks (use [Keys](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.keys) enum names, e.g., `NumPad3`, `F5`).  
+The DangerousNpcAttack.ini file (auto-generated if missing) supports the following settings:  
+- IntervalMinutes: Time interval (in minutes) for automatic attacks (e.g., 5.0 for 5 minutes).  
+- ForceTriggerKey: Key to manually trigger attacks (use [Keys](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.keys) enum names, e.g., NumPad3, F5).  
 
 
 ### Compilation (Optional)  
 If you prefer to compile the script yourself:  
 1. Ensure you have the .NET Framework SDK installed.  
 2. Run the following command in a terminal (replace paths as needed):  
-   ```bash
-   csc /target:library /out:scripts\DangerousNpcAttack.dll /reference:ScriptHookVDotNet2.dll /reference:System.Windows.Forms.dll DangerousNpcAttack.cs
+   ```bash  
+   csc /target:library /out:scripts\DangerousNpcAttack.dll /reference:ScriptHookVDotNet2.dll /reference:System.Windows.Forms.dll DangerousNpcAttack.cs  
    ```  
-   *Note: This requires `ScriptHookVDotNet2.dll` and `System.Windows.Forms.dll` to be accessible in the build environment.*  
+   *Note: This requires ScriptHookVDotNet2.dll and System.Windows.Forms.dll to be accessible in the build environment.*  
 
 
 ### Important Notes  
@@ -68,34 +62,34 @@ If you prefer to compile the script yourself:
 
 
 ### 使用方法  
-1. **自动触发**：脚本会按 `IntervalMinutes`（INI文件中配置）设定的时间间隔自动尝试触发攻击。  
-2. **强制触发**：按下 `ForceTriggerKey`（INI文件中配置的按键）可立即手动触发攻击。  
-3. **重载配置**：按下 `F10` 键可重新加载配置文件（修改设置后使用）。  
+1. **自动触发**：脚本会按 IntervalMinutes（INI文件中配置）设定的时间间隔自动尝试触发攻击。  
+2. **强制触发**：按下 ForceTriggerKey（INI文件中配置的按键）可立即手动触发攻击。  
+3. **重载配置**：按下 F10 键可重新加载配置文件（修改设置后使用）。  
 
 
-### 安装步骤 
+### 安装步骤  
 1. **安装依赖**：  
    - [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)（ScriptHookVDotNet 依赖的执行环境）。  
    - [ScriptHookV](https://www.dev-c.com/gtav/scripthookv/)（GTA 5 脚本运行必需）。  
    - [ScriptHookVDotNet](https://github.com/crosire/scripthookvdotnet)（支持 .NET 脚本）。  
 2. **部署脚本**：  
-   - 将编译好的 `DangerousNpcAttack.dll` 和 `DangerousNpcAttack.ini` 文件放入GTA 5根目录的 `scripts` 文件夹（如 `...\Grand Theft Auto V\scripts\`）。  
+   - 将编译好的 DangerousNpcAttack.dll 和 DangerousNpcAttack.ini 文件放入GTA 5根目录的 scripts 文件夹（如 ...\Grand Theft Auto V\scripts\）。  
 
 
 ### 配置说明  
-`DangerousNpcAttack.ini` 文件（缺失时自动生成）支持以下设置：  
-- `IntervalMinutes`：自动攻击的时间间隔（单位：分钟，如 `5.0` 表示5分钟）。  
-- `ForceTriggerKey`：手动触发攻击的按键（使用[Keys](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.keys)枚举名称，如 `NumPad3`、`F5`）。  
+DangerousNpcAttack.ini 文件（缺失时自动生成）支持以下设置：  
+- IntervalMinutes：自动攻击的时间间隔（单位：分钟，如 5.0 表示5分钟）。  
+- ForceTriggerKey：手动触发攻击的按键（使用[Keys](https://learn.microsoft.com/zh-cn/dotnet/api/system.windows.forms.keys)枚举名称，如 NumPad3、F5）。  
 
 
 ### 自行编译（可选）  
 若需自行编译脚本：  
 1. 确保已安装 .NET Framework SDK。  
 2. 在终端中运行以下命令（根据实际路径调整）：  
-   ```bash
-   csc /target:library /out:scripts\DangerousNpcAttack.dll /reference:ScriptHookVDotNet2.dll /reference:System.Windows.Forms.dll DangerousNpcAttack.cs
+   ```bash  
+   csc /target:library /out:scripts\DangerousNpcAttack.dll /reference:ScriptHookVDotNet2.dll /reference:System.Windows.Forms.dll DangerousNpcAttack.cs  
    ```  
-   *注：编译需确保环境中可访问 `ScriptHookVDotNet2.dll` 和 `System.Windows.Forms.dll`。*  
+   *注：编译需确保环境中可访问 ScriptHookVDotNet2.dll 和 System.Windows.Forms.dll。*  
 
 
 ### 注意事项  
