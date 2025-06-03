@@ -15,6 +15,7 @@ namespace RandomNPCAttack
         private float lastCheckTime = 0.0f;
         private Random random;
         private string iniPath = "scripts\\DangerousNpcAttack.ini";
+        private int copHash;  // 新增：警察关系组哈希
 
         public RandomNPCAttack()
         {
@@ -22,6 +23,9 @@ namespace RandomNPCAttack
             KeyDown += OnKeyDown;
             random = new Random();
             LoadConfig();
+            
+            // 新增：初始化警察关系组哈希
+            copHash = Function.Call<int>(Hash.GET_HASH_KEY, "COP");
         }
 
         private void LoadConfig()
@@ -98,7 +102,9 @@ namespace RandomNPCAttack
 
             foreach (Ped ped in nearbyPeds)
             {
-                if (ped == null || !ped.IsAlive || ped.IsPlayer || !ped.IsHuman || ped.IsInVehicle())
+                // 修正：直接比较 RelationshipGroup 与 copHash
+                if (ped == null || !ped.IsAlive || ped.IsPlayer || !ped.IsHuman || ped.IsInVehicle() 
+                    || ped.RelationshipGroup == copHash)  // 关键修正：移除 .Hash，直接比较
                     continue;
 
                 Vector3 pedPos = ped.Position;
@@ -128,4 +134,4 @@ namespace RandomNPCAttack
             UI.Notify("Closest NPC armed with an RPG and is hostile!；最近的NPC手持RPG，充满敌意！");
         } 
     } 
-} 
+}
