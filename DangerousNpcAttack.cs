@@ -10,12 +10,12 @@ namespace RandomNPCAttack
 {
     public class RandomNPCAttack : Script
     {
-        private float intervalMinutes = 5.0f; // 默认5分钟;Default 5 minutes
-        private Keys forceTriggerKey = Keys.NumPad3; // 默认强制触发键; Default force trigger key is NumPad3
+        private float intervalMinutes = 5.0f; // 默认5分钟
+        private Keys forceTriggerKey = Keys.NumPad3; // 默认强制触发键
         private float lastCheckTime = 0.0f;
         private Random random;
         private string iniPath = "scripts\\DangerousNpcAttack.ini";
-        private int copHash;  // 新增：警察关系组哈希
+        private int copHash;  // 警察关系组哈希
 
         public RandomNPCAttack()
         {
@@ -23,8 +23,7 @@ namespace RandomNPCAttack
             KeyDown += OnKeyDown;
             random = new Random();
             LoadConfig();
-            
-            // 新增：初始化警察关系组哈希
+
             copHash = Function.Call<int>(Hash.GET_HASH_KEY, "COP");
         }
 
@@ -102,9 +101,10 @@ namespace RandomNPCAttack
 
             foreach (Ped ped in nearbyPeds)
             {
-                // 修正：直接比较 RelationshipGroup 与 copHash
+                // 排除条件：无效NPC、警察、与玩家关系友好的NPC（包括LSPDFR搭档）
                 if (ped == null || !ped.IsAlive || ped.IsPlayer || !ped.IsHuman || ped.IsInVehicle() 
-                    || ped.RelationshipGroup == copHash)  // 关键修正：移除 .Hash，直接比较
+                    || ped.RelationshipGroup == copHash 
+                    || Function.Call<int>(Hash.GET_RELATIONSHIP_BETWEEN_PEDS, ped, player) <= 1)
                     continue;
 
                 Vector3 pedPos = ped.Position;
